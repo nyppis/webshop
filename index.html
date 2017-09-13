@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Nettikauppa</title>
+        
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <!-- jquery lisäys-->
+        <script src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+    <div class="shopping-cart">
+     <div class="title">
+         Ostokset
+     </div>
+        <!--Ensimmäinen tuote-->
+         <div class="items">
+     <div class="buttons">
+    <span class="delete-button"></span>
+     <span class="like-button"></span>
+    </div>
+             <div class="image">
+                 <img src="" alt=""/>
+             </div>
+             <div class="description">
+                 <span> Common projects</span>
+                 <span> Bball high</span>
+                 <span> White</span>
+             </div>
+             <div class="quantity">
+                 <button class="plus-btn" type="button" name="button">
+                 <img src="plus.svg" alt=""/>
+                 </button>
+                 <input type="text" name="name" value="1">
+                 <button class="minus-btn" type="button" name="button">
+                 <img src="minus.svg" alt=""/>
+                 </button>
+           </div>
+             
+             <div class="total-price">355 euro</div>
+        </div>
+        
+        <!--Toinen tuote-->
+        <div class="items">
+     <div class="buttons">
+    <span class="delete-button"></span>
+     <span class="like-button"></span>
+    </div>
+             <div class="image">
+                 <img src="" alt=""/>
+             </div>
+             <div class="description">
+                 <span> Maison margiela</span>
+                 <span> Future sneakers</span>
+                 <span> White</span>
+             </div>
+             <div class="quantity">
+                 <button class="plus-btn" type="button" name="button">
+                 <img src="plus.svg" alt=""/>
+                 </button>
+                 <input type="text" name="name" value="1">
+                 <button class="minus-btn" type="button" name="button">
+                 <img src="minus.svg" alt=""/>
+                 </button>
+           </div>
+             
+             <div class="total-price">370 euro</div>
+        </div>
+             <!--Kolmas tuote-->
+        <div class="items">
+     <div class="buttons">
+    <span class="delete-button"></span>
+     <span class="like-button"></span>
+    </div>
+             <div class="image">
+                 <img src="" alt=""/>
+             </div>
+             <div class="description">
+                 <span> Our legacy</span>
+                 <span> Brushed scarf</span>
+                 <span> Brown</span>
+             </div>
+             <div class="quantity">
+                 <button class="plus-btn" type="button" name="button">
+                 <img src="plus.svg" alt=""/>
+                 </button>
+                 <input type="text" name="name" value="1">
+                 <button class="minus-btn" type="button" name="button">
+                 <img src="minus.svg" alt=""/>
+                 </button>
+           </div>
+             <div class="total-price">250 euro
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+    </footer>
+        <!--jQuery koodia tähän?
+        $(document).ready(function(){
+
+   // jQuery methods go here...
+
+});-->
+    <script>
+        //sydänanimaatio
+    $('.like-btn').on('click', function() {
+   $(this).toggleClass('is-active');
+});
+      //plus ja miinusnappulan manipulointi  
+        $('.minus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value &gt; 1) {
+        value = value - 1;
+    } else {
+        value = 0;
+    }
+ 
+  $input.val(value);
+ 
+});
+ 
+$('.plus-btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $input = $this.closest('div').find('input');
+    var value = parseInt($input.val());
+ 
+    if (value &lt; 100) {
+        value = value + 1;
+    } else {
+        value =100;
+    }
+ 
+    $input.val(value);
+});
+        </script>
+    </body>
+    </html>
